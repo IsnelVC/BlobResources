@@ -1,0 +1,30 @@
+﻿@page
+@model BlobResources.Pages.Blob.createModel
+
+@{
+    ViewData["Title"] = "Create Blob Page";
+}
+
+<h1>Create Blob Page</h1>
+
+@* Your HTML content here *@
+<div>
+    <form method="post">
+        <label for="blobName">Introduce the Blob name that you want to create:</label>
+        <input type="text" name="blobName" id="blobName" />
+        <br />
+        <input type="submit" value="Create Blob" />
+    </form>
+</div>
+
+
+@* Display a message if the blob creation was successful *@
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div style="color: green;">
+        @Model.Message
+    </div>
+}
+
+
+

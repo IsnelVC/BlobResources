@@ -1,0 +1,31 @@
+﻿@page
+@model BlobResources.Pages.Blob.uploadModel
+@{
+}
+@{
+    ViewData["Title"] = "Upload a file to the cloud";
+}
+
+<h1>Upload a file to our Files Blob.</h1>
+
+@* Your HTML content here *@
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <label for="blobName">Introduce the Blob name were you want to upload the file:</label>
+        <input type="text" name="blobName" id="blobName" />
+        <br />
+        <label for="file">Select File that you want to upload:</label>
+        <input type="file" name="file" />
+        <br />
+        <input type="submit" value="Upload" />
+    </form>
+</div>
+
+@* Display a message if the file upload was successful *@
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div style="color: green;">
+        @Model.Message
+    </div>
+}
+
